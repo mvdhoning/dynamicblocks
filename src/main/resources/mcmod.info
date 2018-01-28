@@ -1,0 +1,16 @@
+[
+{
+  "modid": "dynamicblocksmod",
+  "name": "Dynamic Blocks Mod",
+  "description": "Configurable blocks that can change appearance on surroundings",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["mvdhoning"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
