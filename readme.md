@@ -9,7 +9,7 @@ With [resource loader](https://www.curseforge.com/minecraft/mc-mods/resource-loa
 
 Make a dynamicblocksmod folder under the resources folder and add blockstate json files with the names of your added blocks. Be sure you know how to make [resource packs](https://minecraft.gamepedia.com/Tutorials/Creating_a_resource_pack).
 
-dynamic_block.json
+### dynamic_block.json
 with variants redstone you get to choose the texture per redstone level
 ```json
 {
