@@ -65,7 +65,11 @@ public class ItemBase extends Item {
 	public void initModel() {
 		LinkedHashMap<String, ModelResourceLocation> test = new LinkedHashMap<String, ModelResourceLocation>();
 
-		// Loop trough config names
+		//default look without nbt name data
+		ModelResourceLocation defaultLook = new ModelResourceLocation(getRegistryName(), "inventory");
+		ModelBakery.registerItemVariants(this, defaultLook);
+		
+		// Loop trough config names for additional looks
 		for (String iname : com.noeska.dynamicblocksmod.config.ModConfig.itemNames) {
 			test.put(iname, new ModelResourceLocation(getRegistryName() + "_" + iname, "inventory"));
 			// Add all modelresources
@@ -77,6 +81,7 @@ public class ItemBase extends Item {
 			public ModelResourceLocation getModelLocation(ItemStack stack) {
 				//retrieve model by name
 				String name = getName(stack);
+				if (name==null) return defaultLook;
 				return test.get(name);
 			}
 		});
@@ -84,7 +89,7 @@ public class ItemBase extends Item {
 	}
 
 	private String getName(ItemStack stack) {
-		String name = "";
+		String name = null;
 		if (getTagCompoundSafe(stack).hasKey("name")) {
 			name = getTagCompoundSafe(stack).getString("name");
 		}
